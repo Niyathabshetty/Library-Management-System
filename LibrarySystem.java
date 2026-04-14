@@ -16,7 +16,10 @@ public class LibrarySystem {
 			System.out.println("4. Issue Book");
 			System.out.println("5. Return Book");
 			System.out.println("6. Show Users");
-			System.out.println("7. EXIT");
+			System.out.println("7. Search Book");
+			System.out.println("8. Remove Book");
+			System.out.println("9. Update Book");
+			System.out.println("10. EXIT");
 			
 			System.out.println("Enter choice:");
 			int choice=sc.nextInt();
@@ -41,6 +44,15 @@ public class LibrarySystem {
 				showUsers();
 				break;
 			case 7:
+				searchBook(sc);
+				break;
+			case 8:
+				removeBook(sc);
+				break;
+			case 9:
+				updateBook(sc);
+				break;
+			case 10:
 				System.out.println("Exiting...");
 				return;
 			default:
@@ -164,6 +176,69 @@ public class LibrarySystem {
 		}
 	}
 	
+	static void searchBook(Scanner sc) {
+		sc.nextLine();
+		System.out.print("Enter title to search:");
+		String search=sc.nextLine().toLowerCase();
+		
+		boolean found=false;
+		
+		for(Book b : books) {
+			if(b.title.toLowerCase().contains(search)) {
+				System.out.println("Found book:");
+				System.out.println("ID:" +b.bookId+
+						 "|Title:" +b.title+
+						 "|Author:" +b.author);
+				found=true;
+			}
+		}
+		
+		if(!found) {
+			System.out.println("No matching book found");
+		}
+	}
 	
+	static void removeBook(Scanner sc) {
+		System.out.print("Enter the BookId to remove: ");
+		int id=sc.nextInt();
+		boolean removed=false;
+		
+		for(int i=0;i<books.size();i++) {
+			if(books.get(i).bookId==id) {
+				books.remove(i);
+				removed=true;
+				break;
+			}
+			
+		}
+		if(removed) {
+			System.out.println("Book removed successfully");
+		}else {
+			System.out.println("Book not found");
+
+		}
+	}
+	
+	static void updateBook(Scanner sc) {
+		System.out.print("Enter BookId to update: ");
+		int id=sc.nextInt();
+		sc.nextLine();
+		
+		for(Book b: books) {
+			if(b.bookId==id) {
+				
+				System.out.print("Enter new title: ");
+				b.title=sc.nextLine();
+				
+				System.out.print("Enter new author: ");
+				b.author=sc.nextLine();
+				
+				System.out.println("Book updated successfully");
+				return;	
+
+			}
+		}
+		System.out.println("Book not found");
+	}
 
 }

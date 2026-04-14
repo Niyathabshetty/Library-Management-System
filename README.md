@@ -43,15 +43,32 @@ It helps manage books and users, issue and return books, and calculate fines for
 ---
 
 ## Sample Output
+## Screenshots
 
+### Add Book & User
+![Add Book and User](screenshots/add_book_user.png)
 
-<img src="add_book_user.png" width="300"/> 
-<img src="show_book.png" width="300"/> 
-<img src="issue_book.png" width="300"/> 
-<img src="return_book.png" width="300"/>
-<img src="return_book1.png" width="300"/>
-<img src="showuser_searchbook.png" width="300"/>
-<img src="update_book.png" width="300"/> 
-<img src="show_updated_book.png" width="300"/> 
-<img src="remove_book.png" width="300"/> 
-<img src="exit_book.png" width="300"/> 
+### Show Books
+![Show Books](screenshots/show_book.png)
+
+### Update Book
+![Update Book](screenshots/update_book.png)
+
+### Show Updated Books
+![Updated Books](screenshots/show_updated_book.png)
+
+### Remove Book
+![Remove Book](screenshots/remove_book.png)
+
+### Issue Book
+![Issue Book](screenshots/issue_book.png)
+
+### Return Book
+![Return Book](screenshots/return_book.png)
+![Return Book 2](screenshots/return_book1.png)
+
+### Search Book / Show Users
+![Search Book](screenshots/showuser_searchbook.png)
+
+### Exit
+![Exit](screenshots/exit_book.png)

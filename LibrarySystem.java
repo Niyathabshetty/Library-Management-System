@@ -68,19 +68,25 @@ public class LibrarySystem {
 	}
 	
 	static void addBook(Scanner sc) {
-		System.out.print("Enter Book ID:");
-		int id=sc.nextInt();
-		sc.nextLine();
-		
-		System.out.print("Enter Title:");
-		String title=sc.nextLine();
-		
-		System.out.print("Enter Author:");
-		String author=sc.nextLine();
-		
-		books.add(new Book(id,title,author));
-		System.out.println("Book added successfully");
-		
+	    System.out.print("Enter Book ID:");
+	    int id = sc.nextInt();
+	    sc.nextLine();
+
+	    for (Book b : books) {
+	        if (b.bookId == id) {
+	            System.out.println("Book ID already exists! Cannot add duplicate book.");
+	            return;
+	        }
+	    }
+
+	    System.out.print("Enter Title:");
+	    String title = sc.nextLine();
+
+	    System.out.print("Enter Author:");
+	    String author = sc.nextLine();
+
+	    books.add(new Book(id, title, author));
+	    System.out.println("Book added successfully");
 	}
 	
 	static void addUser(Scanner sc) {
